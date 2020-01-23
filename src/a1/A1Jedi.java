@@ -1,5 +1,6 @@
 package a1;
 
+import java.util.Arrays;
 import java.util.Scanner;
 
 public class A1Jedi {
@@ -14,6 +15,7 @@ public class A1Jedi {
 		
 		// store Item information
 		String[] storeItemNames = new String[totalItems];
+		int[] custBoughtAlready = new int[totalItems];
 		int[] storeItemsBought = new int[totalItems];
 		int[] storeCustomersBoughtItem = new int[totalItems];
 		
@@ -29,17 +31,31 @@ public class A1Jedi {
 		int totalCustomers = scan.nextInt();
 		
 		for(int i = 0; i < totalCustomers; i++) {
+			
+			Arrays.fill(custBoughtAlready, 0);
+		
 			String b = scan.next();
 			String c = scan.next();
+			
 			int totalCustomerItems = scan.nextInt();
+			
 			for (int j = 0; j < totalCustomerItems; j++) {
+				
 				int totalItemBought = scan.nextInt();
 				String itemBought = scan.next();
+				
 				for (int k = 0; k < totalItems; k++) {
+					
 					if (storeItemNames[k].matches(itemBought)) {
 						
+						if (custBoughtAlready[k] == 0) {
+							
+							storeCustomersBoughtItem[k] += 1;
+							custBoughtAlready[k]++;
+							
+						}
+						
 						storeItemsBought[k] += totalItemBought;
-						storeCustomersBoughtItem[k] += 1;
 						
 							
 						}
