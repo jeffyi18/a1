@@ -11,19 +11,21 @@ public class A1Novice {
 		// Your code follows here.
 		int countCustomers = scan.nextInt();
 		
+		
+		
 		for (int i = 0; i < countCustomers; i++) {
 		
-		String firstName = scan.next();
+			String firstName = scan.next();
 		
-		String lastName = scan.next();
+			String lastName = scan.next();
 		
-		int totalItems = scan.nextInt();
+			int totalItems = scan.nextInt();
 		
 		/* System.out.println(firstName.charAt(0)+ "." + lastName + ":");
 		 * 
 		 */
 		
-		double totalCost = 0;
+			double totalCost = 0;
 		
 			for (int j = 0; j < totalItems; j++) {
 				
